@@ -1,250 +1,65 @@
-export const articlesData = [
-  {
-    name: 'Clothes',
-    cards: [
-      {
-        id: 'qqd2',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'gn2',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'ty34',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'ddfg3',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'gfg4',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+import { generateId } from './components/helpers';
+import { Cart, Product } from './bluePrints';
+//// LOCAL STORAGE  ///////////////
+const cart = new Cart();
+
+const categories = new Map([
+  [
+    'Clothes',
+
+    [
+      { subCatName: `Men's`, img: './images/men_clothes.jpg' },
+      { subCatName: `Women's`, img: './images/women_clothes.jpg' },
+      { subCatName: `Men's / Women's`, img: './images/women_clothes.jpg' },
     ],
-  },
-  {
-    name: 'Shoes',
-    cards: [
-      {
-        id: 'gfh96',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'kj90',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'llkk8',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hguyt8',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'xz2',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+  ],
+  [
+    'Shoes',
+    [
+      { subCatName: `Men's`, img: './images/men_shoe.jpg' },
+      { subCatName: `Women's`, img: './images/women_shoe.jpg' },
+      { subCatName: `Men's / Women's`, img: './images/women_shoe.jpg' },
     ],
-  },
-  {
-    name: 'Watchs',
-    cards: [
-      {
-        id: 'dd5',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hgkl542',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'zvg7',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'k;0-',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hgnhg0',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+  ],
+  [
+    'Watchs',
+    [
+      { subCatName: `Men's`, img: './images/men_watch.jpg' },
+      { subCatName: `Women's`, img: './images/women_watch.jpg' },
+      { subCatName: `Men's / Women's`, img: './images/women_watch.jpg' },
     ],
-  },
-  {
-    name: 'Jewelry',
-    cards: [
-      {
-        id: 'dd5',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hgkl542',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'zvg7',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'k;0-',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hgnhg0',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+  ],
+  [
+    'Jewelries',
+    [
+      { subCatName: `Men's`, img: './images/men_jew.jpg' },
+      { subCatName: `Women's`, img: './images/women_jew.jpg' },
+      { subCatName: `Men's / Women's`, img: './images/women_jew.jpg' },
     ],
-  },
-  {
-    name: 'Decoration gadgets',
-    cards: [
-      {
-        id: 'hghjgf7',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'gfgfd5',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'gfj9',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'gfhg554',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'hj-9',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+  ],
+  [
+    'Decor kits',
+    [
+      { subCatName: 'Light strip', img: './images/room_light.jpg' },
+      { subCatName: 'Bright form', img: './images/lightening_butterflies.jpg' },
     ],
-  },
-  {
-    name: 'Multimedia kits',
-    cards: [
-      {
-        id: 'fddhjh07',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: '559hgf',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: 'fhm90',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: '656huy',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
-      {
-        id: '8776hgh',
-        product_name: '',
-        product_price: '',
-        isLiked: false,
-        img_url: 'head-img.jpg',
-      },
+  ],
+  [
+    'Multimedia kits',
+    [
+      { subCatName: 'Airpods', img: './images/airpods.jpg' },
+      { subCatName: 'Headphone', img: './images/headphone.jpg' },
+      { subCatName: 'Powerbank', img: './images/powerbank.jpg' },
+      { subCatName: 'Phone charger', img: './images/phone_charger.jpg' },
     ],
-  },
-];
+  ],
+]);
+
 export const advantagesInfos = [
   {
     title: 'Free delivery',
     imgUrl: 'free-truck.png',
-    text: 'From a cerain amount, we offer free delivery.',
+    text: 'Free delivery every Saturday and from a cerain amount, we offer free delivery.',
   },
   {
     title: 'Welcome discount',
@@ -267,3 +82,10 @@ export const advantagesInfos = [
     text: 'Refer your friends and get your bonuses.',
   },
 ];
+//// LOCAL STORAGE ///////////////
+
+//--------------------------------//
+
+export { cart, categories };
+
+//// DATA BASE ///////////////

@@ -11,8 +11,10 @@ node_modules
 dist
 .prettierrc
 secret.txt
+Features.txt
 dist-ssr
-*.local
+*.local^
+.env
 
 # Editor directories and files
 .vscode/*
